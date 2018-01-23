@@ -16,7 +16,7 @@ The data set is just a ruby hash, and the rules operate on keys of the hash.
 * There should be specs for all existing rule classes.
 * All the rule classes should work appropriately.
 
-# Sprout Level (more complete rules)
+## Sprout Level (more complete rules)
 
 * Add a rule to check whether the data key is an email address. Call it `Rool::Email`.
 
@@ -28,7 +28,7 @@ The data set is just a ruby hash, and the rules operate on keys of the hash.
 
 * Make sure results and messages are set correctly on all children rules of container rules. Even if an `All` rule fails on the first child, the other children should also know their results.
 
-# Seedling (serialization)
+## Seedling (serialization)
 
 We need to be able to save rulesets to the database. Nate has said he doesn't want to try to fit these rules into a relational database model, and instead wants to save JSON. For this task, don't worry about actually saving to the database; just make sure the rules can be converted to and from json.
 
@@ -37,7 +37,7 @@ We need to be able to save rulesets to the database. Nate has said he doesn't wa
 * Your serialization methods must work with arbitrarily deeply nested rules.
 * Write passing specs to cover any serialization scenarios that could happen.
 
-# Sapling (complex rule types)
+## Sapling (complex rule types)
 
 The team has started using an alpha version of the roolz gem and realized that sometimes, they need to run a rule on elements of an array.
 
@@ -47,7 +47,7 @@ The team has started using an alpha version of the roolz gem and realized that s
 
 * These rules should work with serialization.
 
-# Redwood (functioning rules UI)
+## Redwood (functioning rules UI)
 
 Create a UI that generates a correct JSON representation of rules based on your serialization implementation. The UI can use canvas, javascript, QT, or anything else you want. It does not need to talk to a server and can simply display the correct JSON on the page.
 
@@ -57,7 +57,7 @@ One way you might implement this is to include a textarea for inputting JSON. Th
 
 * The UI should allow nesting `All` and `Any` rules arbitrarily deeply.
 
-# Forest (real-time server testing in UI)
+## Forest (real-time server testing in UI)
 
 Based on the UI from before, allow a user to specify a dataset and run the rules in real time. Users should also be able to save a ruleset to a database. The server is a JSON api that does not render any HTML. Your frontend should interact with the server as an api.
 
