@@ -1,4 +1,4 @@
-# Roolz gem (interview project)
+# Roolz gem
 
 Your boss, Nate, has handed you a half-baked project and asked you to finish it. Luckily, there are some specs, and you can kind of see what he's going for, but a lot of the specs are failing, and you've noticed some of the classes don't even have specs yet.
 
