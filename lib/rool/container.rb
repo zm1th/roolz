@@ -1,4 +1,5 @@
 class Rool::Container
+  puts "Container checking in."
   attr_reader :children
   def initialize(*children_rules)
     if !children_rules.all?{|r| r.kind_of?(Rool::Container) || r.kind_of?(Rool::Basic)}
