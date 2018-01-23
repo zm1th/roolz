@@ -1,5 +1,5 @@
 class Rool::Basic
-
+	puts "Basic checking in."
   attr_accessor :data_key, :operand
   def initialize(data_key = nil, operand = nil)
     @data_key = data_key
