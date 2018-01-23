@@ -4,6 +4,8 @@ Your boss, Nate, has handed you a half-baked project and asked you to finish it.
 
 As with any project, you know you probably won't finish everything in time, but you really want to wow Nate with what you do finish.
 
+Start out by forking the roolz repository to your own github account. Remember to commit often as you work through the requirements. Don't be afraid to ask for clarification when project specifications are incomplete.
+
 ## Gem Purpose
 
 The Roolz gem is supposed to be able to build up a deeply-nested ruleset, then run the rules on an arbitrary data set.
@@ -28,6 +30,8 @@ The data set is just a ruby hash, and the rules operate on keys of the hash.
 
 * Make sure results and messages are set correctly on all children rules of container rules. Even if an `All` rule fails on the first child, the other children should also know their results.
 
+* Make sure to test this functionality thoroughly with specs.
+
 ## Seedling (serialization)
 
 We need to be able to save rulesets to the database. Nate has said he doesn't want to try to fit these rules into a relational database model, and instead wants to save JSON. For this task, don't worry about actually saving to the database; just make sure the rules can be converted to and from json.
@@ -41,7 +45,7 @@ We need to be able to save rulesets to the database. Nate has said he doesn't wa
 
 The team has started using an alpha version of the roolz gem and realized that sometimes, they need to run a rule on elements of an array.
 
-* Create a rule class called `Rool::Send`. Given a method name, basic rule type, and operand, this rule calls the method on the dataset's data key, then builds the basic rule and runs with the modified data. For example, you might use `Rool::Send` to check whether an array contains fewer than 100 elements by instantiating the rule with method = `count`, rule type = `less_than`, and operand = 100.
+* Create a rule class called `Rool::Send`. Given a method name, basic rule type, and operand, this rule calls the method on the dataset's data key, then builds the basic rule and runs with the modified data. For example, you might use `Rool::Send` to check whether an array contains fewer than 100 elements by instantiating the rule with method = `count`, rule type = `less_than`, and operand = 100. Be careful not to mess up the data set, since it is probably getting passed around by reference.
 
 * Create a rule class called `Rool::Iterate`. Given an existing basic rule type, an operand, and an existing container rule type, it should run the basic rule on all elements of an array (in the data set) using the specified container type. For example, you might use this to check whether all the elements of an array are positive numbers, by passing 'greater_than', 0, and 'all'). By passing 'any' instead of 'all', you could check whether any of the numbers are positive. This class should instantiate the appropriate container and basic rule classes and pass the dataset to them.
 
