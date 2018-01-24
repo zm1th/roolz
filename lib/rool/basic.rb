@@ -4,6 +4,8 @@ class Rool::Basic
   def initialize(data_key = nil, operand = nil)
     @data_key = data_key
     @operand = operand
+    @result = nil
+    @message = nil
   end
 
   def process(dataset = {})
