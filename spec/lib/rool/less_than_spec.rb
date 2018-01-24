@@ -8,7 +8,7 @@ describe "Rool::LessThan" do
 
     it "returns true if the value passed (operand) is less than the value in the data set" do
       # 5 < 40
-      expect(Rool::LessThan.new(:foo, 40).process(@data)).to eq(false)
+      expect(Rool::LessThan.new(:foo, 40).process(@data)).to eq(true)
     end
     it "returns false if the value passed is equal to the value in the data set" do
       expect(Rool::LessThan.new(:foo, 5).process(@data)).to eq(false)
