@@ -1,4 +1,3 @@
-
 describe "Rool::Equal" do
   describe '#process' do
 
