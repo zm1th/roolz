@@ -5,7 +5,9 @@ module Rool
   		if @operand.respond_to?(:match?) && dataset[@data_key].respond_to?(:<)
   			return @operand.match?(dataset[@data_key])
   		end
-  		false
+  		self.instance_variable_set(:@result, false)
+  		self.instance_variable_set(:@message, "#{@operand} cannot be found in the data set with regexp.")
+			return false
   	end
   end
 end
