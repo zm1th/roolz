@@ -11,11 +11,11 @@ describe "Rool::Include" do
       }
     end
 
-    it "returns true if the operand matches one of the data keys" do
-      expect(Rool::Include.new(:foo, 'fizz').process(@data)).to eq(true)
+    it "returns true if the operand matches one of the data key values" do
+      expect(Rool::Include.new(:foo, 'bar').process(@data)).to eq(true)
     end
     it "returns false if the operand is not included in the data key set" do
-      expect(Rool::Include.new(:fizz, 'Buzz').process(@data)).to eq(false)
+      expect(Rool::Include.new(:fizz, 'Texas').process(@data)).to eq(false)
     end
     it "returns false if the operand is nil" do
       expect(Rool::Include.new(:fizz, nil).process(@data)).to eq(false)
