@@ -9,15 +9,19 @@ module Rool
   		super
   		
   		if @operand == nil
+  			self.instance_variable_set(:@result, false)
+      	self.instance_variable_set(:@message, "The operand cannot be nil.")
   			return false
   		end
-
-  		dataset.keys.each do |datum|
-  			if datum == @operand.to_sym
+  		
+  		dataset.values.each do |value|
+  			if value == @operand
   				return true
   			end
   		end
-  		false
+  		self.instance_variable_set(:@result, false)
+      self.instance_variable_set(:@message, "#{@operand} does not match any values in the data set.")
+  		return false
   	end
   end
 end

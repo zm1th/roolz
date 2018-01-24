@@ -1,9 +1,11 @@
 class Rool::Basic
 
-  attr_accessor :data_key, :operand
-  def initialize(data_key = nil, operand = nil)
+  attr_accessor :data_key, :operand, :result, :message
+  def initialize(data_key = nil, operand = nil, result = nil, message = nil)
     @data_key = data_key
     @operand = operand
+    @result = true
+    @message = ''
   end
 
   def process(dataset = {})
