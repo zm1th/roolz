@@ -1,4 +1,3 @@
-
 describe "Rool::Not" do
   describe '#process' do
     it 'raises an exception if more than one child rule is passed to the constructor' do
