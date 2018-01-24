@@ -13,6 +13,8 @@ module Rool
   		if dataset[@data_key].nil? || dataset[@data_key].empty?
   			return true
   		end
+      self.instance_variable_set(:@result, false)
+      self.instance_variable_set(:@message, "The value of #{dataset[@data_key]} is not blank.")
   		false
 		end
   end
