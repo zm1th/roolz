@@ -10,6 +10,8 @@ module Rool
   				return false
       	end
       end
+      self.instance_variable_set(:@result, false)
+      self.instance_variable_set(:@message, "#{@operand} is not able to be compared to #{dataset[@data_key]}")
       false
     end
   end

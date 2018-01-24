@@ -18,7 +18,9 @@ module Rool
       	operand_set = @operand.to_set
       	return operand_set.subset?(key_set) || operand_set == key_set
       end
-      false
+      self.instance_variable_set(:@result, false)
+      self.instance_variable_set(:@message, "#{@operand} is not a valid subset of #{dataset[@data_key]}")
+      return false
     end
   end
 end
