@@ -1,5 +1,7 @@
 module Rool
   class Equal < Basic
-  	#what equal comparison needs to be made here?
+  	def process(data)
+  		data[:foo] == @operand
+  	end
   end
 end
