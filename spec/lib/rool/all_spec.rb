@@ -1,9 +1,15 @@
 
 describe "Rool::All" do
   describe '#process' do
+
+  	## Expect True
+
     it 'returns true if all the children rules are true for the dataset' do
       expect(Rool::All.new(Rool::True.new, Rool::True.new).process).to be(true)
     end
+
+    ##Expect False
+    
     it 'returns false if any of the children rules are false for the dataset' do
       expect(Rool::All.new(Rool::False.new, Rool::True.new).process).to be(false)
     end
