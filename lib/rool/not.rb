@@ -1,9 +1,7 @@
 module Rool
   class Not < Container
-  	def initialize(children_rules)
-  		super
-  	end
   	def process
+  		super
   		@children.all?{|r| r.process}
   	end
   end

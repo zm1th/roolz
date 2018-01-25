@@ -1,6 +1,7 @@
 module Rool
   class Include < Basic
   	def process(data)
+  		super
 			@result = @operand.include?(data)	
 			if @result == false
 				@message = "That element is not included in the dataset"

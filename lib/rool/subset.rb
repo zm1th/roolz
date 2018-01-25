@@ -3,7 +3,7 @@ module Rool
 		def process(data)
 			@result = (@operand & data ) == data
 			if @result == false
-				@message = "The provided array is not a subset of Rule's set array"
+				@message = "The provided array is not a subset of dataset array"
 			end
 			return @result
 		end
