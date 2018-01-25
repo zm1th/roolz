@@ -5,9 +5,14 @@ class Rool::Container
       raise ArgumentError.new("Expected children rules to be objects in the Rool namespace")
     end
     @children = children_rules
+    @result = nil
   end
 
   def process(dataset={})
     raise "Implement the #process in the child rule container class"
+  end
+
+  def message
+    
   end
 end
