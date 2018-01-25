@@ -14,6 +14,19 @@ describe "Rool::All" do
       expect(Rool::All.new(Rool::False.new, Rool::True.new).process).to be(false)
     end
 
+    ## Result Attribute
+
+    it 'will have a false result attribute after a false return' do
+      @false_test = Rool::All.new(Rool::False.new, Rool::True.new)
+      @false_test.process
+      expect(@false_test).to have_attributes(result: false)
+    end
+
+    it 'will have a true result attribute after a true return' do
+      @true_test = Rool::All.new(Rool::True.new)
+      @true_test.process
+      expect(@true_test).to have_attributes(result: true)
+    end
    
   end
 
