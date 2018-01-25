@@ -1,3 +1,5 @@
+# This is the parent class for rules that have children. Put all shared container rule functionality here.
+
 class Rool::Container
   attr_reader :children
   def initialize(*children_rules)
