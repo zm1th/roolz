@@ -11,7 +11,7 @@ module Rool
       	end
       end
       self.instance_variable_set(:@result, false)
-      self.instance_variable_set(:@message, "#{@operand} is not able to be compared to #{dataset[@data_key]}")
+      self.instance_variable_set(:@message, "#{@operand} is not able to be compared.")
       false
     end
   end

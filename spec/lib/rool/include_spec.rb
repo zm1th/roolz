@@ -14,7 +14,7 @@ describe "Rool::Include" do
     ## Expect True
 
     it "returns true if the operand matches one of the data key values" do
-      expect(Rool::Include.new(:foo, 'bar').process(@data)).to eq(true)
+      expect(Rool::Include.new(:cool, 'bar').process(@data)).to eq(true)
     end
 
     it "returns true if the operand matches one of the data key values" do

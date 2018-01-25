@@ -38,7 +38,7 @@ describe "Rool::LessThan" do
     it 'will have a false result attribute and a message if incomparable' do
       @false_test = Rool::GreaterThan.new(:foo, 'Texas')
       @false_test.process(@data)
-      expect(@false_test).to have_attributes(result: false, message: "Texas is not able to be compared to #{@data[:foo]}")
+      expect(@false_test).to have_attributes(result: false, message: "Texas is not able to be compared.")
     end
   end
 end
