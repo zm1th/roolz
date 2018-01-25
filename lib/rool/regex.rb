@@ -3,8 +3,6 @@ module Rool
   	def process(dataset)
   		super
   		if @operand.respond_to?(:match?) && dataset[@data_key].respond_to?(:<)
-  			p @operand
-  			p dataset[@data_key]
   			@operand.match?(dataset[@data_key])
   			if @operand.match?(dataset[@data_key])
   				return true
