@@ -10,7 +10,7 @@ describe "Rool::Equal" do
 			expect(Rool::Equal.new(:foo, 30).process(@data)).to eq(true)
 		end
 
-		it "returns messag if the value passed is equal to the value in the data set " do
+		it "returns message if the value passed is equal to the value in the data set " do
 			expect(Rool::Equal.new(:foo, 20).process(@data)).to eq("Value is not equal to dataset")
 		end
 		

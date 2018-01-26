@@ -5,6 +5,7 @@ class Rool::Container
       raise ArgumentError.new("Expected children rules to be objects in the Rool namespace")
     end
     @children = children_rules
+    @message_array = []
     @result = nil
   end
 
@@ -13,6 +14,11 @@ class Rool::Container
   end
 
   def message
-    
+    @children.each do |r| 
+      if r.process(dataset = {}).class == String
+        @message_array << r.process(dataset = {})
+      end
+    end
+    return @message_array
   end
 end

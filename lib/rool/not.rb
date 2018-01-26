@@ -4,7 +4,8 @@ module Rool
   		super
   	end
   	def process
-  		@children.all?{|r| r.process}
+  		@result = @children.all?{|r| r.process}
+  		return @result
   	end
   end
 end
