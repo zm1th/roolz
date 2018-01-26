@@ -3,9 +3,10 @@ module Rool
 		def process(data)
 			@result = (@operand & data ) == data
 			if @result == false
-				@message = "The provided array is not a subset of dataset array"
+				return @message = "The provided array is not a subset of dataset array"
+			else
+				return @result
 			end
-			return @result
 		end
 	end
 end

@@ -1,12 +1,18 @@
 module Rool
 	class Blank < Basic
 		def process(data)
-			super
-			@result = data.nil? || data.empty?
-			if @result == false
-				@message = 'Data has been found.'
+			#I really feel like there's a dryer way to do this.
+			if data.class == Integer || data.class == NilClass
+				@result = data.nil?
+			else
+				@result = data.empty?
 			end
-			return @result
+
+			if @result == false
+				return @message = 'Data has been found.'
+			else
+				return @result
+			end
 		end
 	end
 end
