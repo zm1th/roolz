@@ -19,6 +19,7 @@ describe "Rool::All" do
 
   		container = Rool::All.new(blank, email, equal, greater_than, include_rool, less_than, regex, subset)
 
+  		#ALL of these should fail
   		blank.process('There is data here')
   		email.process
   		equal.process({foo: 30})
@@ -30,5 +31,31 @@ describe "Rool::All" do
 
     	expect(container.message).equal? be an_instance_of(Array)
     end
+
+    it "returns an array of messages when rules fail." do
+    	blank = Rool::Blank.new
+  		email = Rool::Email.new(:email, "shiny.com")
+  		equal = Rool::Equal.new(:foo, 20)
+  		greater_than = Rool::GreaterThan.new(:foo, 1)
+  		include_rool = Rool::Include.new(:foo, [1,true,"bar",6,8, :foobar])
+  		less_than = Rool::LessThan.new(:foo, -30)
+  		regex = Rool::Regex.new(:name, /Arnold\s?Schwarzenegger/i)
+  		subset = Rool::Subset.new(:foo, [1,2,3,4,5,6,7])
+
+  		container = Rool::All.new(blank, email, equal, greater_than, include_rool, less_than, regex, subset)
+
+  		blank.process('There is data here')
+  		email.process
+  		equal.process({foo: 20}) #this one should succeed, message should be nil
+  		greater_than.process({foo: 5})
+  		include_rool.process(1) #this one should succeed, message should be nil
+  		less_than.process({foo: 5})
+  		regex.process(email: 'nate@chargeback.com')
+  		subset.process([2,8,9])
+
+    	expect(container.message).not_to include(nil)
+    	p container.message
+    end
+
   end
 end

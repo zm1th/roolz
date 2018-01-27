@@ -16,8 +16,8 @@ class Rool::Container
 
   def message
     @children.each do |r| 
-      @message_array << r.message
-      @result_array << r.result
+      @message_array << r.message unless r.message.nil?
+      @result_array <<  r.result
     end
     return @message_array
   end
