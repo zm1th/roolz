@@ -7,7 +7,7 @@ module Rool
 	      	return @result = true
 	      else
 	      	@result = false
-		      return @message = "operand is greater than value in data set"
+		      return @message = "operand is greater than or equal to value in data set"
 		    end
   		else
   			@result = false

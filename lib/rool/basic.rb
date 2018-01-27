@@ -1,6 +1,6 @@
 class Rool::Basic
 
-  attr_accessor :data_key, :operand
+  attr_accessor :data_key, :operand, :result, :message
   def initialize(data_key = nil, operand = nil)
     @data_key = data_key
     @operand = operand
