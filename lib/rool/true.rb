@@ -2,7 +2,7 @@ module Rool
   class True < Basic
     def process(dataset={})
       # don't call super since this is an absolute answer
-      true
+      @result = true
     end
   end
 end

@@ -35,7 +35,12 @@ class Rool::Container
     return JSON.generate(json_hash)    
   end
 
-  def from_json 
-    
+  def from_json(json_string)
+    object = JSON.parse(json_string)
+    container = Object.const_get(object['class']).new()
+    object['children'].each do |r|
+      container.children << Object.const_get(r['class']).new(r["data_key"], r["operand"])
+    end
+    return container    
   end
 end

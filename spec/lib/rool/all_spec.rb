@@ -7,7 +7,9 @@ describe "Rool::All" do
     it 'returns false if any of the children rules are false for the dataset' do
       expect(Rool::All.new(Rool::False.new, Rool::True.new).process).to be(false)
     end
-    it "returns an array of messages when rules fail." do
+   end
+   describe "#message" do
+   	it "returns an array of messages when rules fail." do
     	blank = Rool::Blank.new
   		email = Rool::Email.new(:email, "shiny.com")
   		equal = Rool::Equal.new(:foo, 20)
@@ -31,7 +33,6 @@ describe "Rool::All" do
 
     	expect(container.message).equal? be an_instance_of(Array)
     end
-
     it "returns an array of messages when rules fail." do
     	blank = Rool::Blank.new
   		email = Rool::Email.new(:email, "shiny.com")
@@ -55,8 +56,9 @@ describe "Rool::All" do
 
     	expect(container.message).not_to include(nil)
     end
-
-    it "returns a json object" do
+   end
+   describe "#to_json" do
+   	it "returns a json object" do
     	blank = Rool::Blank.new
   		email = Rool::Email.new(:email, "shiny.com")
   		equal = Rool::Equal.new(:foo, 20)
@@ -89,7 +91,20 @@ describe "Rool::All" do
   					message: 'Value is not equal to dataset'
   				}])
     end
+   end
+   describe "#from_json" do
+    it "returns an object from a json string" do
+    	#first create the json string. If there is an easier way to do this, I would LOVE to know.
+    	blank = Rool::Blank.new
+  		email = Rool::Email.new(:email, "shiny.com")
+  		equal = Rool::Equal.new(:foo, 20)
 
+  		container = Rool::All.new(blank, email, equal)
 
+  		json_string = container.to_json
+
+  		expect(container.from_json(json_string)).to be_a Rool::Container
+
+    end
   end
 end
