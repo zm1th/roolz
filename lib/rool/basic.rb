@@ -13,4 +13,13 @@ class Rool::Basic
     return false unless dataset.key?(@data_key)
   end
 
+  def to_json
+    JSON.generate({class: self.class, data_key: self.data_key, operand: self.operand})
+  end
+
+  def from_json(json_string)
+    object = JSON.parse(json_string)
+    Object.const_get(object['class']).new(object['data_key'], object['operand'])
+  end
+
 end
