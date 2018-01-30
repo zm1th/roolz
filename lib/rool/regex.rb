@@ -1,9 +1,9 @@
 module Rool
   class Regex < Basic
   	def process(data)
-	  	@result =	!!(data[:email] =~ @operand)
+	  	@result =	!!(data[@data_key] =~ @operand)
 	  	if @result == false
-	  		return @message = "there is no match in the dataset"
+	  		return @message = "no match was found"
 	  	else
 		  	return @result
 		  end

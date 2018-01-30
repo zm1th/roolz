@@ -15,13 +15,13 @@ describe "Rool::Regex" do
       expect(Rool::Regex.new(:email, /chargeback/i).process(@data)).to eq(true)
     end
     it "returns message if the operand does not match the value in the data set" do
-      expect(Rool::Regex.new(:name, /Arnold\s?Schwarzenegger/i).process(@data)).to eq("there is no match in the dataset")
+      expect(Rool::Regex.new(:name, /Arnold\s?Schwarzenegger/i).process(@data)).to eq("no match was found")
     end
     it "returns message if the operand or dataset value does not work with regular expressions" do
-      expect(Rool::Regex.new(:name, ).process(@data)).to eq("there is no match in the dataset")
+      expect(Rool::Regex.new(:name, ).process(@data)).to eq("no match was found")
     end
     it "returns message if the value passed does not respond to the < operator" do
-      expect(Rool::Regex.new(:favorite_books, /anathem/i).process(@data)).to eq("there is no match in the dataset")
+      expect(Rool::Regex.new(:favorite_books, /anathem/i).process(@data)).to eq("no match was found")
     end
   end
 end

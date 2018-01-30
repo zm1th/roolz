@@ -1,7 +1,7 @@
 module Rool
   class Equal < Basic
   	def process(data)
-  		if data[:foo] == @operand
+  		if data[@data_key] == @operand
         return @result = true
       else
         @result = false
