@@ -26,8 +26,7 @@ describe "Rool::Blank" do
 		it "returns message if there is data" do
 			expect(Rool::Blank.new.process(:foo)).to eq('Data has been found.')
 		end
-
-		
+	
 	end
 	
 end

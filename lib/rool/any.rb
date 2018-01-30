@@ -1,8 +1,7 @@
 module Rool
   class Any < Container
   	def process(dataset={})
-  		@result = @children.any?{|r| r.process(dataset)}
-  		return @result
+  		return @result = @children.any?{|r| r.process(dataset)}
   	end
   end
 end
