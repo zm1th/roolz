@@ -6,6 +6,7 @@ module Rool
   			@message = "Not a valid email."
   		else
 	  		return @result
+        
 	  	end
   	end
   end
