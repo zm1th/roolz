@@ -1,5 +1,7 @@
 require 'json'
 
+# This is the parent class for rules that have children. Put all shared container rule functionality here.
+
 class Rool::Container
   attr_reader :children, :message_array, :result, :result_array
   def initialize(*children_rules)
