@@ -1,6 +1,6 @@
 # Roolz gem
 
-Your boss, Nate, has handed you a half-baked rules engine and asked you to finish it. The developer that was working on it just got accepted to the first mission to Mars, and quit without notice. Luckily, there are some specs, and you can kind of see what he was going for, but a lot of the specs are failing, and you've noticed some of the classes don't even have specs yet.
+Your boss has handed you a half-baked rules engine and asked you to finish it. The developer that was working on it just got accepted to the first mission to Mars, and quit without notice. Luckily, there are some specs, and you can kind of see what he was going for, but a lot of the specs are failing, and you've noticed some of the classes don't even have specs yet.
 
 Don't assume all the existing specs, or existing code, are already perfect. Clone the git repo and get hacking. Don't be afraid to ask for clarification when project specifications are incomplete, or to implement something better than specified if you're sure your approach is superior.
 
