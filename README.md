@@ -1,12 +1,10 @@
 # Roolz gem
 
-Your boss, Nate, has handed you a half-baked project and asked you to finish it. Luckily, there are some specs, and you can kind of see what he's going for, but a lot of the specs are failing, and you've noticed some of the classes don't even have specs yet.
+Your boss, Nate, has handed you a half-baked rules engine and asked you to finish it. The developer that was working on it just got accepted to the first mission to Mars, and quit without notice. Luckily, there are some specs, and you can kind of see what he was going for, but a lot of the specs are failing, and you've noticed some of the classes don't even have specs yet.
 
-As with any project, you know you probably won't finish everything in time, but you really want to wow Nate with what you do finish.
+Don't assume all the existing specs, or existing code, are already perfect. Clone the git repo and get hacking. Don't be afraid to ask for clarification when project specifications are incomplete, or to implement something better than specified if you're sure your approach is superior.
 
-Start out by forking the roolz repository to your own github account. Remember to commit often as you work through the requirements. Don't be afraid to ask for clarification when project specifications are incomplete.
-
-If you only get through the Sapling level, that is good enough for now, but you secretly want to finish at least the Redwood level just to see what Nate says. You can also skip parts you can't figure out, so you could implement some pieces of the Forest level even if not all of the Seed level is done. In general, though, the levels do build on each other.
+The project is organized into Levels: Seed, Sprout, Seedling, Sapling, Redwood, and Forest. If you want to implement only parts of these levels, you can, but they generally build on each other. It's not expected that you'll finish all the levels. Finish what you can.
 
 ## Gem Purpose
 
